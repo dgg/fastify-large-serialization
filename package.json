@@ -1,18 +1,11 @@
 {
-	"name": "schema-performance",
+	"name": "fastify-large-serialization",
 	"version": "1.0.0",
 	"description": "Project to reproduce poor serialization behavior",
 	"main": "index.js",
 	"scripts": {
 		"start": "node server.js",
-		"dev": "nodemon server.js",
-		"profiled": "node profiled.js",
-		"doctor:with": "clinic doctor --autocannon [ -m POST http://localhost:3000/with ] -- node server.js",
-		"doctor:without": "clinic doctor --autocannon [ -m POST http://localhost:3000/without ] -- node server.js",
-		"bubble:without": "clinic bubbleprof --autocannon [ -m POST http://localhost:3000/without ] -- node server.js",
-		"bubble:with": "clinic bubbleprof --autocannon [ -m POST http://localhost:3000/with ] -- node server.js",
-		"ping:with": "curl -X POST -o /dev/null http://localhost:3000/with",
-		"ping:without": "curl -X POST -o /dev/null http://localhost:3000/without"
+		"dev": "nodemon server.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -21,8 +14,6 @@
 		"fastify": "^3.20.2"
 	},
 	"devDependencies": {
-		"autocannon": "^7.5.0",
-		"clinic": "^10.0.0",
 		"nodemon": "^2.0.15"
 	}
 }
