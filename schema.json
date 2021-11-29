@@ -1,0 +1,65 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "response",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"series"
+	],
+	"properties": {
+		"series": {
+			"$id": "#/properties/series",
+			"type": "array",
+			"items": {
+				"$id": "#/properties/series/items",
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"name",
+					"columns",
+					"points"
+				],
+				"properties": {
+					"name": {
+						"$id": "#/properties/series/items/properties/name",
+						"type": "string",
+						"minLength": 1,
+						"examples": [
+							"223926"
+						]
+					},
+					"columns": {
+						"$id": "#/properties/series/items/properties/columns",
+						"type": "array",
+						"minItems": 2,
+						"items": {
+							"$id": "#/properties/series/items/properties/columns/items",
+							"type": "string",
+							"minLength": 1
+						}
+					},
+					"points": {
+						"$id": "#/properties/series/items/properties/points",
+						"type": "array",
+						"items": {
+							"$id": "#/properties/series/items/properties/points/items",
+							"type": "array",
+							"minItems": 2,
+							"items": {
+								"$id": "#/properties/series/items/properties/points/items/items",
+								"type": [
+									"number",
+									"boolean",
+									"string",
+									"null"
+								],
+								"minLength": 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
